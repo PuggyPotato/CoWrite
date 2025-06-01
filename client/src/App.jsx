@@ -6,9 +6,15 @@ function App() {
 
   return (
     <>
-      <div id='container'>
-        <textarea id='content'></textarea>
+    <div id='container'>
+      <div id="tools">
+              
+      </div>
+      <div id='contentContainer'>
+        <textarea id='content'>
+        </textarea>
       </div>   
+    </div>
     </>
   )
 }
