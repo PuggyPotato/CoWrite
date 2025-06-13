@@ -62,3 +62,20 @@ html{
     height: 100%;
     width: 100%;
 }
+
+#droppedDown{
+    width: 10rem;
+    position: absolute;
+    padding: 10px;
+    display: none;
+    left: 0;
+    border: 2px solid gray;
+    gap: 10px;
+
+}
+
+.dropButton{
+    padding: 2px;
+    margin: 2px;
+    width: 5rem;
+}
