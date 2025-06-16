@@ -1,8 +1,31 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
+import {io} from "socket.io-client"
+
+const socket = io("http://localhost:3000",{
+  transports:["websocket"],
+})
 
 function App() {
   const [drop,setDrop] = useState(false)
+
+  useEffect(() =>{
+    socket.on("connect",() =>{
+      console.log("Connected to the server");
+    });
+
+    socket.on("hello", (data) =>{
+      console.log("Connected to the server");
+    })
+
+    socket.on("reply",(data) =>{
+      console.log("Server says:",data)
+    })
+
+    return() =>{
+      socket.disconnect();
+    };
+  },[])
 
   function toggleDrop(){
     if(drop == true){
